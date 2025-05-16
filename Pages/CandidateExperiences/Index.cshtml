@@ -1,0 +1,84 @@
+﻿@page
+@model CandidatosWebApp.Pages.CandidateExperiences.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].IdCandidate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].Job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].BeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].InsertDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidateExperience[0].ModifyDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CandidateExperience) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCandidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeginDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsertDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdCandidateExperience">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdCandidateExperience">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdCandidateExperience">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

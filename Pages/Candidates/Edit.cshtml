@@ -1,0 +1,60 @@
+﻿@page
+@model CandidatosWebApp.Pages.Candidates.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Candidate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Candidate.IdCandidate" />
+            <div class="form-group">
+                <label asp-for="Candidate.Name" class="control-label"></label>
+                <input asp-for="Candidate.Name" class="form-control" />
+                <span asp-validation-for="Candidate.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.Surname" class="control-label"></label>
+                <input asp-for="Candidate.Surname" class="form-control" />
+                <span asp-validation-for="Candidate.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.BirthDate" class="control-label"></label>
+                <input asp-for="Candidate.BirthDate" class="form-control" />
+                <span asp-validation-for="Candidate.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.email" class="control-label"></label>
+                <input asp-for="Candidate.email" class="form-control" />
+                <span asp-validation-for="Candidate.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.InsertDate" class="control-label"></label>
+                <input asp-for="Candidate.InsertDate" class="form-control" />
+                <span asp-validation-for="Candidate.InsertDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.ModifyDate" class="control-label"></label>
+                <input asp-for="Candidate.ModifyDate" class="form-control" />
+                <span asp-validation-for="Candidate.ModifyDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
